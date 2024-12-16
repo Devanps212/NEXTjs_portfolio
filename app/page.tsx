@@ -1,6 +1,5 @@
 import Details from "./components/hero/details"
 import Hero from "./components/hero/profilePic"
-import Slider from "./components/slider/slider"
 
 const Home = () => {
   return (
@@ -9,7 +8,6 @@ const Home = () => {
         <Hero/>
         <Details/>
       </div>
-      <Slider/>
     </> 
   )
 }
