@@ -1,4 +1,4 @@
-import { ImagesSkills, ImageSet } from "@/app/types/skills/image";
+import { ImagesSkills, ImageSet } from "@/app/types" 
 
 
 const FRONTEND : ImagesSkills[] = [
@@ -92,6 +92,11 @@ const FAMILIAR_WITH : ImagesSkills[] = [
     src:'/skills Icons/familiar_with/Socket.io.svg',
     alt:'socket.io-logo',
     link:'https://socket.io/'
+  },
+  {
+    src:'/skills Icons/familiar_with/234155932-6b387fce-6fe3-489a-a7d2-6b687523b229.svg',
+    alt:'Plywright-logo',
+    link:'https://playwright.dev/'
   }
 ]
 
