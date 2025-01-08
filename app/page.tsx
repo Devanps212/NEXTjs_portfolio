@@ -4,7 +4,7 @@ import Hero from "./components/hero/profilePic"
 const Home = () => {
   return (
     <>
-      <div className="grid grid-cols-2 h-screen">
+      <div className="flex flex-col md:flex-row md:justify-around justify-center h-screen">
         <Hero/>
         <Details/>
       </div>
