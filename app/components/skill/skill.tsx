@@ -13,8 +13,8 @@ const SkillsImages = ({
   title: string
 }) => {
   return (
-    <div className='bg-yellow-300 rounded-lg shadow-lg'>
-      <h2 className='font-semibold text-center text-3xl p-3'>{title}</h2>
+    <div className='bg-yellow-300 w-auto p-5 rounded-lg shadow-lg'>
+      <h2 className='font-semibold text-center text-md sm:text-lg md:text-xl lg:text-3xl p-3'>{title}</h2>
       <div className={`p-5 flex ${images.length === 2 ? '' : 'flex-col'} space-y-3`}>
         {
           images.length > 3 ? (
@@ -33,7 +33,7 @@ const SkillsImages = ({
                           alt={alt}
                           width={100}
                           height={100}
-                          className="p-3 mx-1 bg-white border rounded-xl h-16 w-16 hover:-translate-y-2 transform transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black-400/50"
+                          className="p-3 xl:p-2 mx-1 bg-white border rounded-xl h-19 w-14 hover:-translate-y-2 transform transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black-400/50"
                         />
                       </motion.div>
                     </Link>
@@ -54,7 +54,7 @@ const SkillsImages = ({
                           alt={alt}
                           width={100}
                           height={100}
-                          className="p-3 mx-1 bg-white border rounded-xl h-16 w-16 hover:-translate-y-2 transform transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black-400/50"
+                          className="p-3 xl:p-2 mx-1 bg-white border rounded-xl xl:h-18 xl:w-18 h-19 w-14 hover:-translate-y-2 transform transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black-400/50"
                         />
                       </motion.div>
                     </Link>
@@ -77,7 +77,7 @@ const SkillsImages = ({
                         alt={alt}
                         width={100}
                         height={100}
-                        className="p-3 mx-1 bg-white border rounded-xl h-16 w-16 hover:-translate-y-2 transform transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black-400/50"
+                        className="xl:p-3 sm:p-2 p-1 mx-1 bg-white border rounded-xl h-10 w-10 xl:h-16 xl:w-16 hover:-translate-y-2 transform transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black-400/50"
                       />
                     </motion.div>
                   </Link>
