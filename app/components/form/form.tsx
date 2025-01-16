@@ -5,6 +5,7 @@ import { Rings } from 'react-loader-spinner';
 import { Formik, Form as FormikForm, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FormValues } from '@/app/types';
+import { toast } from 'react-toastify';
 
 const Form = ({ inputs }: { inputs: string[] }) => {
 
@@ -34,14 +35,13 @@ const Form = ({ inputs }: { inputs: string[] }) => {
     }
   
     emailjs.send(serviceId, templateId, message, publicKey)
-      .then((response: unknown) => {
-        console.log(response)
+      .then((response: { status:number, text: string }) => {
         setSubmitting(false)
-        alert("Successfully submitted")
+        if(response.status === 200)toast.success("Email submitted sucessfully")
         resetForm()
       })
       .catch((error: Error) => {
-        console.log(error)
+        toast.error(error.message)
         setSubmitting(false)
         alert("Submission failed. Please try again.")
       })
@@ -68,7 +68,7 @@ const Form = ({ inputs }: { inputs: string[] }) => {
                   name={field.toLowerCase()}
                   rows={5}
                   placeholder={`Enter your ${field.toLowerCase()}`}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <ErrorMessage name={field.toLowerCase()}>
                   {(msg) => <div className="text-red-600 text-sm">{msg}</div>}
@@ -84,7 +84,7 @@ const Form = ({ inputs }: { inputs: string[] }) => {
                   id={field.toLowerCase()}
                   name={field.toLowerCase()}
                   placeholder={`Enter your ${field.toLowerCase()}`}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <ErrorMessage name={field.toLowerCase()}>
                   {(msg) => <div className="text-red-600 text-sm">{msg}</div>}
@@ -111,8 +111,7 @@ const Form = ({ inputs }: { inputs: string[] }) => {
                       ariaLabel="rings-loading"
                       wrapperStyle={{}}
                       wrapperClass=""/>
-                  </div>
-                  
+                  </div>  
                 )
               }
             </button>

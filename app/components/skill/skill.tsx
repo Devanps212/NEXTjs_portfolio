@@ -14,7 +14,9 @@ const SkillsImages = ({
 }) => {
   return (
     <div className='bg-yellow-300 w-auto p-5 rounded-lg shadow-lg'>
-      <h2 className='font-semibold text-center text-md sm:text-lg md:text-xl lg:text-3xl p-3'>{title}</h2>
+      <h2 
+        className='title font-light text-center text-md sm:text-lg md:text-xl lg:text-3xl p-3'
+        style={{fontFamily:"sans-serif"}}>{title}</h2>
       <div className={`p-5 flex ${images.length === 2 ? '' : 'flex-col'} space-y-3`}>
         {
           images.length > 3 ? (

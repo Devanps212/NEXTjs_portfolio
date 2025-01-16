@@ -3,6 +3,7 @@ import Form from '@/app/components/form/form';
 import Image from 'next/image';
 import { motion } from 'framer-motion'
 import React from 'react';
+import './page.css'
 
 const ContactUs = () => {
   return (
@@ -21,7 +22,7 @@ const ContactUs = () => {
           />
         </motion.div>
         <motion.div 
-          className="w-full mx-auto p-6 border border-gray-300 rounded-lg shadow-md"
+          className="form-container w-full mx-auto p-6 border bg-white bg-opacity-1 lg:bg-transparent lg:bg-opacity-1 border-gray-300 rounded-lg shadow-2xl"
           initial={{ opacity:0, x:50 }}
           animate={{ opacity:1, x:0 }}
           transition={{ duration: 0.5, ease:'easeIn' }}>

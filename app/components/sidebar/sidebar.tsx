@@ -33,10 +33,15 @@ const Sidebar = ({ closeSidebar }: { closeSidebar: () => void }) => {
         className={`fixed top-0 left-0 w-64 h-full bg-gray-800 text-white z-50 shadow-lg transition-all duration-300 ease-in-out transform ${isVisible ? 'translate-x-0' : '-translate-x-full opacity-0'}`}>
         <div className='flex flex-col items-center py-8 '>
           <ul className='space-y-10 list-items text-2xl'>
+            <li>
+              <Link href="/" className='outline-none' onClick={handleSidebarClose}>
+              <h1 className='text-3xl font-extrabold lg:text-[50px] lg:font-bold tracking-wide'>Devan PS</h1>
+            </Link>
+            </li>
             {
-              HEADER.map((list, index)=>(
+              HEADER.map(({link, title}, index)=>(
               <li key={index} className="transition-all hover:scale-80 hover:text-3xl hover:font-bold ease-in block">
-                <Link href="/pages/skills" onClick={handleSidebarClose} className="w-full sm:w-auto text-center sm:text-left">{list}</Link>
+                <Link href={link} onClick={handleSidebarClose} className="w-full sm:w-auto text-center sm:text-left">{title}</Link>
               </li>
               ))
             }
