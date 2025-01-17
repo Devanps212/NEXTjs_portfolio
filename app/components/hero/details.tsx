@@ -2,6 +2,7 @@
 import React from 'react';
 import './details.css';
 import { motion } from 'framer-motion'
+import { SOCIAL_MEDIA } from '@/app/constants';
 
 const Details = () => {
   const handleDownload = () => {
@@ -40,6 +41,25 @@ const Details = () => {
       >
         Download Resume
       </motion.button>
+      <motion.div
+        className="space-x-2 text-2xl hidden ml:flex"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.8, ease: "easeOut" }}>
+          {
+            SOCIAL_MEDIA.map(({icon, link, name})=>(
+              <motion.a
+                key={name}
+                href={link}
+                target='_blank'
+                className='cursor-pointer'
+                whileHover={{ scale: 1.2, rotate: 15 }}
+                transition={{ type: 'spring', stiffness: 300 }}>
+                {icon}
+              </motion.a>
+            ))
+          }
+      </motion.div>
     </div>
   );
 };

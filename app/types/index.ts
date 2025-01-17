@@ -3,6 +3,7 @@ import { ImageSet, ImagesSkills } from "./skills/image";
 import { Projects } from './projects/projects'
 import { FormValues } from "./form/form";
 import { HEAD } from "./header/header";
+import { SocialMedia } from "./socialMedia/socialMedia";
 
 
 export type{
@@ -11,5 +12,6 @@ export type{
     HEAD,
     ImagesSkills,
     Projects,
-    FormValues
+    FormValues,
+    SocialMedia
 }
